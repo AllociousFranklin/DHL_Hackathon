@@ -297,24 +297,41 @@ export default function OperatorDashboard({ onLogout }) {
           </div>
         )}
 
-        {/* Drop Zone */}
-        <label className="block cursor-pointer group">
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            multiple
-            className="hidden"
-            onChange={handleFiles}
-          />
-          <div className="border-2 border-dashed border-white/[0.08] group-hover:border-[#FFCC00]/50 rounded-2xl p-10 sm:p-12 text-center transition-all duration-300 active:scale-[0.98] group-hover:bg-[#FFCC00]/[0.02]">
-            <div className="w-14 h-14 mx-auto bg-[#FFCC00]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <ImagePlus size={28} className="text-[#FFCC00]" />
+        {/* Action Zones */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          {/* Camera Button */}
+          <label className="cursor-pointer group">
+            <input
+              type="file"
+              accept="image/*"
+              capture="environment"
+              className="hidden"
+              onChange={handleFiles}
+            />
+            <div className="bg-[#FFCC00] hover:bg-[#FFD633] text-black rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 active:scale-[0.97] shadow-xl shadow-[#FFCC00]/10 h-full">
+              <Camera size={32} className="mb-3 group-hover:scale-110 transition-transform duration-300" strokeWidth={2.5} />
+              <p className="text-sm font-extrabold">Take Photo</p>
+              <p className="text-[10px] text-black/60 mt-1 font-medium">Use device camera</p>
             </div>
-            <p className="text-sm font-semibold text-white">Tap to add photos</p>
-            <p className="text-xs text-gray-500 mt-1">JPEG or PNG · Min 1600×900</p>
-          </div>
-        </label>
+          </label>
+
+          {/* Gallery Button */}
+          <label className="cursor-pointer group">
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              className="hidden"
+              onChange={handleFiles}
+            />
+            <div className="border-2 border-dashed border-white/[0.08] hover:border-[#FFCC00]/50 bg-white/[0.02] hover:bg-[#FFCC00]/[0.02] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 active:scale-[0.97] h-full">
+              <ImagePlus size={32} className="mb-3 text-gray-400 group-hover:text-[#FFCC00] group-hover:scale-110 transition-all duration-300" />
+              <p className="text-sm font-semibold text-white">Gallery</p>
+              <p className="text-[10px] text-gray-500 mt-1 font-medium">Upload multiple</p>
+            </div>
+          </label>
+        </div>
 
         {/* Thumbnail Grid */}
         {files.length > 0 && (
