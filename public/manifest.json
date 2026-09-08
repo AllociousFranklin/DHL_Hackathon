@@ -1,0 +1,14 @@
+{
+  "name": "DHL Tie-Down Inspection",
+  "short_name": "DHL Check",
+  "description": "Aircraft Engine Tie-Down & Pneumatic Suspension Inspection System",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0B0F",
+  "theme_color": "#FFCC00",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/vite.svg", "sizes": "192x192", "type": "image/svg+xml" },
+    { "src": "/vite.svg", "sizes": "512x512", "type": "image/svg+xml" }
+  ]
+}
