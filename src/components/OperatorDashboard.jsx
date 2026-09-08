@@ -298,7 +298,7 @@ export default function OperatorDashboard({ onLogout }) {
         )}
 
         {/* Action Zones */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        <div className="flex flex-col gap-3 sm:gap-4">
           {/* Camera Button */}
           <label className="cursor-pointer group">
             <input
@@ -308,7 +308,7 @@ export default function OperatorDashboard({ onLogout }) {
               className="hidden"
               onChange={handleFiles}
             />
-            <div className="bg-[#FFCC00] hover:bg-[#FFD633] text-black rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 active:scale-[0.97] shadow-xl shadow-[#FFCC00]/10 h-full">
+            <div className="bg-[#FFCC00] hover:bg-[#FFD633] text-black rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 active:scale-[0.97] shadow-xl shadow-[#FFCC00]/10 w-full">
               <Camera size={32} className="mb-3 group-hover:scale-110 transition-transform duration-300" strokeWidth={2.5} />
               <p className="text-sm font-extrabold">Take Photo</p>
               <p className="text-[10px] text-black/60 mt-1 font-medium">Use device camera</p>
@@ -325,10 +325,12 @@ export default function OperatorDashboard({ onLogout }) {
               className="hidden"
               onChange={handleFiles}
             />
-            <div className="border-2 border-dashed border-white/[0.08] hover:border-[#FFCC00]/50 bg-white/[0.02] hover:bg-[#FFCC00]/[0.02] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 active:scale-[0.97] h-full">
-              <ImagePlus size={32} className="mb-3 text-gray-400 group-hover:text-[#FFCC00] group-hover:scale-110 transition-all duration-300" />
-              <p className="text-sm font-semibold text-white">Gallery</p>
-              <p className="text-[10px] text-gray-500 mt-1 font-medium">Upload multiple</p>
+            <div className="border-2 border-dashed border-white/[0.08] hover:border-[#FFCC00]/50 bg-white/[0.02] hover:bg-[#FFCC00]/[0.02] rounded-2xl p-5 sm:p-6 flex flex-row items-center justify-center gap-3 text-center transition-all duration-300 active:scale-[0.97] w-full">
+              <ImagePlus size={20} className="text-gray-400 group-hover:text-[#FFCC00] transition-colors duration-300" />
+              <div className="text-left">
+                <p className="text-sm font-semibold text-white">Upload from Gallery</p>
+                <p className="text-[10px] text-gray-500 font-medium mt-0.5">Select multiple photos</p>
+              </div>
             </div>
           </label>
         </div>
